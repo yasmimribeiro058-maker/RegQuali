@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo-cadastro.css">
+</head>
+
+
+<body>
+    <div class="login">
+        <div class="caixa">
+            <h1>Cadastrar</h1>
+            <p>Preencha o formulario para se cadastrar:</p>
+ <form id="form">
+
+
+                <div class="login-grupo">
+                    <label for="nome">Nome:
+                    <input type="text" name="nome" id="Inome" required></label>
+                </div>
+
+
+                <div class="login-grupo">
+                    <label for="cpf">CPF:
+                    <input type="text" name="cpf" id="Icpf" required></label>
+                </div>
+
+
+                <div class="login-grupo">
+                <label>Qual o setor de atuação?
+                <select id="Iselecao">
+                    <option>Inspetor de Qualidade</option>
+                    <option>Técnicos e Engenheiros</option>
+                    <option>Auditores Interos e Externos</option>
+                    <option>Gestores de Produção</option>
+                </select></label>
+                </div>
+
+
+                <div class="login-grupo">
+                    <label for="email">Email:
+                    <input type="email" name="email" id="Iemail" required></label>
+                </div>
+                <div class="login-grupo">
+                    <label for="senha">Senha:
+                    <input type="password" name="senha" id="Isenha" required></label>
+                </div>
+                <div>
+                    <p>Já tem cadastro? <a href="entrar.html">Clique Aqui</a></p>
+                </div>
+
+                <div id="mensagem" style="margin-bottom: 15px; color: rgb(128, 255, 128); font-weight: bold;"></div>
+
+                     <button type="submit" class="login-botao">Enviar</button>
+                </form>
+            
+         
+    
+
+                <p id="mensagem"></p>
+
+            
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>  
+<script>
+    //Comunicação com o firebase e o JS
+    const firebaseConfig = {
+  apiKey: "AIzaSyChJvk6R0ociVLIdTMnXCOf8fOb0SIA5gY",
+  authDomain: "regquali-banco-de-dados.firebaseapp.com",
+  databaseURL: "https://regquali-banco-de-dados-default-rtdb.firebaseio.com",
+  projectId: "regquali-banco-de-dados",
+  storageBucket: "regquali-banco-de-dados.firebasestorage.app",
+  messagingSenderId: "561677183432",
+  appId: "1:561677183432:web:888950802bc2b0e321b8fd"
+};
+//Inicializando o Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+
+//Envia dados ao Realtime Database
+document.getElementById('form').addEventListener('submit',function(e) {
+    e.preventDefault(); //Impede a reinicialização automatica do formulário
+    //Guarda o valor de nome e e-mail do HTML nas variaveis JS
+    const nome = document.getElementById('Inome').value;
+    const cpf = document.getElementById('Icpf').value;
+    const selecao = document.getElementById('Iselecao').value;
+    const email = document.getElementById('Iemail').value;
+    const senha = document.getElementById('Isenha').value;
+
+
+    //Avisa o firebase que os dados serão guardados dentro dele
+    database.ref('usuarios').push({
+        nome:nome,
+        cpf: cpf,
+        selecao: selecao,
+        email:email,
+        senha: senha
+    })
+    .then(() => {
+        document.getElementById('mensagem').innerText = 'Dados enviados com sucesso!';
+        //Entra em outra pagina
+        window.location.href="sobre-nos.html";
+    })
+    .catch(error => {
+        document.getElementById('mensagem').innerText = 'Erro:' +error.message;
+    });
+});
+</script>
+
+        </div>
+    </div>
+</body>
+</html>

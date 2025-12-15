@@ -1,0 +1,215 @@
+/* ================================
+    RESET E ESTILOS GERAIS
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    /* Fundo Escurecido: Degradê Cinza Suave (Mais fundo que o branco) */
+    background: linear-gradient(to bottom, #F0F0F0, #DCDCDC); 
+    background-attachment: fixed; 
+    background-color: #F0F0F0; 
+    font-family: sans-serif;
+    color: #1A1A1C; 
+    
+   /* PARTE QUE DEFINE A ALTURA MÍNIMA E O LAYOUT FLEXBOX */
+    min-height:150vh; 
+    display: flex; 
+    flex-direction: column;
+}
+
+
+/* ================================
+    CABEÇALHO
+================================ */
+.cabecalho {
+    width: 100%;
+    background-color: #1a1a1c;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo-area h1 {
+    color: #000000; 
+    margin: 0;
+    font-size: 28px
+}
+
+
+.menu-principal ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+
+.menu-principal a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.menu-principal a:hover {
+    color: #9dcbff;
+}
+
+
+/* ================================
+    FORMULÁRIO
+================================ */
+.login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    
+    /* MODIFICAÇÃO PARA OCUPAR O ESPAÇO RESTANTE */
+    flex-grow: 1; /* Permite que este elemento se expanda e preencha o espaço vazio entre o cabeçalho e o rodapé */
+}
+
+
+
+.caixa {
+    background-color: #566a83;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+
+/* Título */
+.caixa h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+
+/* GRUPOS */
+.login-grupo {
+    background-color: #1a1a1c;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+}
+
+
+.login-grupo label {
+    color: #0a0909; 
+    font-size: 15px;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
+}
+
+
+.login-grupo input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 5px;
+    border: 2px solid #7baec5;
+    background-color: #1a1a1c;
+    color: #0a0a0a; 
+}
+
+
+/* COLUNAS */
+.colunas {
+    display: flex;
+    gap: 20px;
+}
+
+
+.colunas .login-grupo {
+    flex: 1;
+}
+
+
+/* BOTÃO */
+.login-botao {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #9dcbff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.login-botao:hover {
+    background-color: #1a3e57;
+}
+/* ================================
+    RODAPÉ
+================================ */
+.rodape {
+    width: 100%;
+    background-color: #1a1a1c;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+
+.rodape-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    flex-wrap: wrap;
+}
+
+
+.rodape-coluna {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+
+.rodape-coluna h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #9dcbff;
+}
+
+
+.rodape-coluna p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #e6e6e6;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .rodape-coluna {
+        width: 100%;
+    }
+}

@@ -1,0 +1,144 @@
+/* =================================
+   Estilos Gerais e Corpo da Página
+   ================================= */
+   
+
+body {
+    /* Fundo Escurecido: Degradê Cinza Suave (Mais fundo que o branco) */
+    background: linear-gradient(to bottom, #F0F0F0, #DCDCDC); 
+    background-attachment: fixed; 
+    background-color: #F0F0F0; 
+    font-family: sans-serif;
+    color: #1A1A1C; 
+    
+   /* PARTE QUE DEFINE A ALTURA MÍNIMA E O LAYOUT FLEXBOX */
+    min-height:150vh; 
+    display: flex; 
+    flex-direction: column;
+}
+
+/* =================================
+   Estrutura do Formulário
+   ================================= */
+.login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    
+    /* MODIFICAÇÃO PARA OCUPAR O ESPAÇO RESTANTE */
+    flex-grow: 1; /* Permite que este elemento se expanda e preencha o espaço vazio entre o cabeçalho e o rodapé */
+}
+
+
+.caixa {
+    text-align: center;
+    background-color: #566a83;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(146, 146, 146, 0.822);
+    width: 100%;
+    max-width: 700000px;
+}
+
+
+.login-grupo {
+    margin-bottom: 15px;
+    text-align: left;
+    padding: 15px 15px;
+    border: 1px solid #1a1a1c;
+    border-radius: 10px;
+    background-color: #1a1a1c;
+    color: #b0b0b0;
+    font-weight: bold;
+}
+
+
+.login-grupo label {
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 3px;
+    font-size: 16px;
+    color: white;
+}
+
+
+.login-grupo input,
+.login-grupo select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 17px 14px;
+    border: 2px solid #7baec5;
+    border-radius: 5px;
+    background-color: #1a1a1c;
+    color: #FFFFFF;
+}
+
+
+/* Layout em colunas para a página de cadastro */
+.colunas {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+
+.colunas .login-grupo {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+
+/* =================================
+   Botões e Links
+   ================================= */
+.login-botao {
+    width: 100%;
+    max-width: 150px;
+    padding: 10px 12px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 7px;
+    background-color: #9dcbff;
+    color: #FFFFFF;
+}
+
+
+.login-botao:hover {
+    background-color: #1a3e57;
+    text-decoration: none;
+}
+
+
+a {
+    color: #2e519b;
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* =================================
+   Tipografia
+   ================================= */
+h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+
+p {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
