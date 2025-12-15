@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGQUALY</title>
+    <link rel="stylesheet" href="estilo-entrar.css">
+</head>
+
+
+<body>
+    <div class="login">
+        <div class="caixa">
+            <h1>Entrar</h1>
+            <p>Digite seu email e senha para continuar:</p>
+<form id="form">
+
+                <div class="login-grupo">
+                    <label for="Iemail">Email:</label>
+                    <input type="email" name="email" id="Iemail" required>
+                </div>
+
+                <div class="login-grupo">
+                    <label for="Isenha">Senha:</label>
+                    <input type="password" name="senha" id="Isenha" required>
+                </div>
+
+                <div>
+                    <p>Ainda não tem cadastro? <a href="cadastro.html">Clique Aqui</a></p>
+                </div>
+
+                 
+
+                <button type="submit" class="login-botao">Entrar</button>
+            </form>
+
+                <p id="mensagem"></p>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>  
+<script>
+    //Comunicação com o firebase e o JS
+    const firebaseConfig = {
+  apiKey: "AIzaSyChJvk6R0ociVLIdTMnXCOf8fOb0SIA5gY",
+  authDomain: "regquali-banco-de-dados.firebaseapp.com",
+  databaseURL: "https://regquali-banco-de-dados-default-rtdb.firebaseio.com",
+  projectId: "regquali-banco-de-dados",
+  storageBucket: "regquali-banco-de-dados.firebasestorage.app",
+  messagingSenderId: "561677183432",
+  appId: "1:561677183432:web:888950802bc2b0e321b8fd"
+};
+//Inicializando o Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+
+//Envia dados ao Realtime Database
+document.getElementById('form').addEventListener('submit',function(e) {
+    e.preventDefault(); //Impede a reinicialização automatica do formulário
+    //Guarda o valor de nome e e-mail do HTML nas variaveis JS
+    const email = document.getElementById('Iemail').value;
+    const senha = document.getElementById('Isenha').value;
+
+
+    //Avisa o firebase que os dados serão guardados dentro dele
+    database.ref('usuarios').push({
+
+        email:email,
+        senha: senha
+    })
+    .then(() => {
+        document.getElementById('mensagem').innerText = 'Dados enviados com sucesso!';
+        //Entra em outra pagina
+        window.location.href="sobre-nos.html";
+    })
+    .catch(error => {
+        document.getElementById('mensagem').innerText = 'Erro:' +error.message;
+    });
+});
+</script>
+
+        </div>
+    </div>
+
+</body>
+</html>
+

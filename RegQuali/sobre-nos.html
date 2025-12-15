@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre Nós - RegQuali</title>
+
+
+
+
+
+    <link rel="stylesheet" href="estilo-cabecalho.css">
+
+    <link rel="stylesheet" href="estilo.rodape.css">
+
+    <link rel="stylesheet" href="sobrenos.css">
+
+    <link rel="stylesheet" href="funcoes-execucao.css">
+
+
+
+
+
+
+    <script>
+
+        let indice = 0;
+
+        function iniciarCarrossel() {
+
+            const imagens = document.querySelectorAll('.carrossel img');
+
+            imagens.forEach(img => img.classList.remove('ativa'));
+
+            imagens[indice].classList.add('ativa');
+
+            indice = (indice + 1) % imagens.length;
+
+        }
+
+        setInterval(iniciarCarrossel, 3000);
+
+        window.onload = iniciarCarrossel;
+
+    </script>
+
+</head>
+
+
+
+
+
+<body>
+
+<header class="cabecalho">
+
+    <div class="logo-area">
+
+        <h1>RegQuali</h1>
+
+    </div>
+
+    <nav class="menu-principal">
+
+        <ul>
+
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+
+            <li><a href="registro-qualidade.html">Funções de Identificação</a></li>
+
+            <li><a href="funcoes-execucao.html">Função e Execução</a></li>
+
+            <li><a href="funcoes-especificas.html">Funções Específicas</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+
+
+<main class="container-conteudo">
+
+
+
+
+
+    <!-- CARROSSEL -->
+
+<div class="imagem-container">
+  <img src="img/automobilistica.png" alt="Imagem estática">
+</div>
+
+
+
+
+    <div class="sobre-nos-secao">
+
+        <h2>Nossa Missão é a Excelência em Qualidade</h2>
+
+        <p>
+
+            A <strong>RegQuali</strong> nasceu com o propósito de simplificar e elevar os padrões de qualidade em processos industriais e de serviço. Nossa plataforma integra ferramentas de registro, rastreabilidade e controle de não-conformidades, permitindo que nossos clientes atinjam a excelência operacional e cumpram rigorosamente as normas do setor.
+
+        </p>
+
+
+
+
+
+        <p>
+
+            Utilizamos tecnologia de ponta para oferecer soluções intuitivas e poderosas, transformando dados brutos em informações acionáveis. Nossa visão é ser o principal parceiro na gestão da qualidade, garantindo que cada etapa do seu processo seja transparente e eficiente.
+
+        </p>
+
+
+
+
+
+        <div class="valores">
+
+            <h3>Nossos Valores Fundamentais</h3>
+
+            <ul>
+
+                <li><strong>Inovação:</strong> Desenvolvemos continuamente novas ferramentas.</li>
+
+                <li><strong>Transparência:</strong> Promovemos a clareza em todos os registros.</li>
+
+                <li><strong>Compromisso:</strong> Foco total no sucesso e satisfação do cliente.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-col">
+
+            <h2 class="logo">RegQuali</h2>
+
+            <p><strong>Endereço:</strong></p>
+
+            <p>Rua Guatemala 19</p>
+
+            <p class="wh-title"><strong> WhatsApp Vendas:</strong></p>
+
+            <a href="#">(055) 113047-7300</a>
+
+            <p class="wh-title"><strong> WhatsApp Suporte:</strong></p>
+
+            <a href="#">(055) 113047-7322</a>
+
+        </div>
+
+
+
+
+
+        <div class="footer-col">
+
+            <h3>Nossas soluções</h3>
+
+            <a href="#">Gestão de Documentos</a>
+
+            <a href="#">Gestão de Não Conformidades</a>
+
+            <a href="#">Gestão de Riscos</a>
+
+            <a href="#">Gestão de Fornecedores</a>
+
+        </div>
+
+
+
+
+
+        <div class="footer-col">
+
+            <h3>Indústrias</h3>
+
+            <a href="#">Indústria Geral</a>
+
+            <a href="#">Logística</a>
+
+            <a href="#">Engenharia e Construção Civil</a>
+
+            <a href="#">Demais setores</a>
+
+        </div>
+
+
+
+
+
+        <div class="footer-col">
+
+            <h3>Sobre nós</h3>
+
+            <a href="#">Cases de Sucesso</a>
+
+            <a href="#">Sobre nós</a>
+
+            <a href="#">Contato</a>
+
+        </div>
+
+
+
+
+
+        <div class="footer-col">
+
+            <h3>Conteúdos</h3>
+
+            <a href="#">Materiais gratuitos</a>
+
+            <a href="#">RegQuali Explica</a>
+
+            <a href="#">Diagnóstico SGQ</a>
+
+            <a href="#">Newsletter</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+</body>
+
+</html>
